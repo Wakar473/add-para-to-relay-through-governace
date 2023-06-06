@@ -1934,6 +1934,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "expander"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f360349150728553f92e4c997a16af8915f418d3a0f21b440d34c5632f16ed84"
+dependencies = [
+ "blake2",
+ "fs-err",
+ "proc-macro2",
+ "quote",
+]
+
+[[package]]
 name = "eyre"
 version = "0.6.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4793,9 +4805,9 @@ dependencies = [
 
 [[package]]
 name = "orchestra"
-version = "0.0.2"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0aab54694ddaa8a9b703724c6ef04272b2d27bc32d2c855aae5cdd1857216b43"
+checksum = "2b0766f60d83cac01c6e3f3bc36aaa9056e48bea0deddb98a8c74de6021f3061"
 dependencies = [
  "async-trait",
  "dyn-clonable",
@@ -4803,18 +4815,19 @@ dependencies = [
  "futures-timer",
  "orchestra-proc-macro",
  "pin-project",
- "prioritized-metered-channel",
+ "prioritized-metered-channel 0.4.0",
  "thiserror",
  "tracing",
 ]
 
 [[package]]
 name = "orchestra-proc-macro"
-version = "0.0.2"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a702b2f6bf592b3eb06c00d80d05afaf7a8eff6b41bb361e397d799acc21b45a"
+checksum = "3c8e83dbd049009426b445424a1104c78e6172a4c13e3614e52a38262785a5d7"
 dependencies = [
- "expander 0.0.6",
+ "expander 1.0.0",
+ "indexmap",
  "itertools",
  "petgraph",
  "proc-macro-crate",
@@ -6835,7 +6848,7 @@ dependencies = [
  "parity-scale-codec",
  "polkadot-primitives",
  "polkadot-test-service",
- "prioritized-metered-channel",
+ "prioritized-metered-channel 0.2.0",
  "prometheus-parse",
  "sc-cli",
  "sc-client-api",
@@ -6973,7 +6986,7 @@ dependencies = [
  "polkadot-overseer",
  "polkadot-primitives",
  "polkadot-primitives-test-helpers",
- "prioritized-metered-channel",
+ "prioritized-metered-channel 0.2.0",
  "rand 0.8.5",
  "sp-application-crypto",
  "sp-core",
@@ -7002,7 +7015,7 @@ dependencies = [
  "polkadot-node-subsystem-types",
  "polkadot-primitives",
  "polkadot-primitives-test-helpers",
- "prioritized-metered-channel",
+ "prioritized-metered-channel 0.2.0",
  "sc-client-api",
  "sp-api",
  "sp-core",
@@ -7821,6 +7834,23 @@ version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "382698e48a268c832d0b181ed438374a6bb708a82a8ca273bb0f61c74cf209c4"
 dependencies = [
+ "coarsetime",
+ "crossbeam-queue",
+ "derive_more",
+ "futures",
+ "futures-timer",
+ "nanorand",
+ "thiserror",
+ "tracing",
+]
+
+[[package]]
+name = "prioritized-metered-channel"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a3caef72a78ca8e77cbdfa87dd516ebb79d4cbe5b42e3b8435b463a8261339ff"
+dependencies = [
+ "async-channel",
  "coarsetime",
  "crossbeam-queue",
  "derive_more",
